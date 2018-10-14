@@ -58,7 +58,7 @@
 
     <h2 id = "traces">{{ traces.join("") }}</h2>  
   <h3 v-if="isRunning"> {{ message }} </h3>
-  <input v-bind:disabled="wrongGuess >= 6" v-if="isRunning"  @keyup = "checkGuess" id = "guess" v-model = "charGuess" type = "text" maxlength="1">
+  <input v-bind:disabled="wrongGuess >= 6 || rightGuess >= wordSplited.length" v-if="isRunning"  @keyup = "checkGuess" id = "guess" v-model = "charGuess" type = "text" maxlength="1">
   <p v-if="charUsed.length > 0">Letters alread used: <span> {{ charUsed.join() }} </span></p>
   
   
